@@ -1,0 +1,29 @@
+<h1>Artist Management System</h1>
+<%= button_to "Create",new_artist_path, method: :get %>
+<table>
+<tr>
+<th>Name</th>
+<th>DOB</th>
+<th>Gender</th>
+<th>Address</th>
+<th>First Year Release</th>
+<th>Number of Albums Released</th>
+<th>Action</th>
+</tr>
+
+<% @artist.each do |artist| %>
+<tr>
+<td><%= artist.name%></td>
+<td><%= artist.dob%></td>
+<td><%= artist.gender%></td>
+<td><%= artist.address%></td>
+<td><%= artist.first_release_year%></td>>
+<td><%= artist.no_of_albums_released%></td>
+  <td><%= link_to 'Music', artist_musics_path(artist) %></td>
+<td><%= link_to 'Show',artist_path(artist) %></td>
+<td><%= link_to 'Edit',edit_artist_path(artist) %></td>
+<td><%= link_to 'Delete', artist_path(artist), data:{turbo_method: :delete,turbo_confirm: 'Are you sure?'} %></td>
+</tr>
+<% end %>
+
+</table>

@@ -1,0 +1,16 @@
+
+<%= button_to 'Create Music', new_artist_music_path, method: :get  %>
+
+<%= button_to 'Back' ,artists_path, method: :get%>
+
+<% @musics.each do |music| %>
+  <p>Title: <%= music.title %></p>
+  <p>Album Name: <%= music.album_name %></p>
+  <p>Genre: <%= music.genre %></p>
+  <%= link_to "Edit",  edit_artist_music_path(artist_id:music.artist_id, id:music.id), method: :patch %>
+  <%= link_to "Delete", artist_music_path(artist_id: music.artist.id, id: music.id), method: :delete, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+
+  <br>
+  <br>
+
+<% end %>

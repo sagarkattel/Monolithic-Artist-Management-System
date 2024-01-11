@@ -1,0 +1,32 @@
+<h1>Create New Music for Artist : <%=@artist_id %></h1>
+
+<% if @music.errors.any? %>
+  <ul>
+    <% @music.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= button_to 'Back', artist_musics_path, method: :get %>
+
+<%= form_with model: [@artist, Music.new], url: artist_musics_path, local: true do |f| %>
+  <p>
+    <%=f.label :Title %>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%=f.label :"Album Name" %>
+    <%=f.text_field :album_name%>
+  </p>
+
+  <p>
+    <%=f.label :Genre %>
+    <%=f.text_field :genre%>
+  </p>
+
+  <%= f.hidden_field :artist_id, value: @artist_id %>
+
+  <p><%= f.submit %></p>
+<% end %>
