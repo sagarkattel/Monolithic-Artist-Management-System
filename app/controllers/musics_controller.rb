@@ -1,4 +1,5 @@
 class MusicsController <ApplicationController
+  before_action :require_login
   before_action :set_music, only: [ :edit,:update, :destroy]
   before_action :set_artist_id, only: [:index, :new, :edit] 
   before_action :set_artist, only: [:edit, :update]

@@ -1,5 +1,6 @@
 # app/controllers/user_controller.rb
 class UserController < ApplicationController
+  before_action :require_login, only: [:index, :edit, :update, :destroy]
   def new
     @user = User.new
   end
@@ -14,8 +15,7 @@ class UserController < ApplicationController
       flash[:notice] = "Signup successful"
       redirect_to login_path
     else
-      flash[:alert] = "Please try again"
-      render 'new'
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -29,7 +29,7 @@ class UserController < ApplicationController
       flash[:notice]="User is successfully updated"
       redirect_to user_index_path
     else
-      render 'edit', status: :unprocessable_entity
+      render :edit, status: :unprocessable_entity
     end
   end
 

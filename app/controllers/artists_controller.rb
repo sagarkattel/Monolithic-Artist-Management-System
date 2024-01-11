@@ -1,4 +1,5 @@
 class ArtistsController < ApplicationController
+    before_action :require_login
     before_action :set_artist, only: [:show, :edit, :update, :destroy]
 
     def show
@@ -52,6 +53,8 @@ class ArtistsController < ApplicationController
 
     def artist_params
         params.require(:artist).permit(:name,:dob,:gender, :address, :first_release_year,:no_of_albums_released)
-    end    
+    end   
+    
+    
 
 end
