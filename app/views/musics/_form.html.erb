@@ -21,7 +21,7 @@
 
   <p>
     <%=f.label :Genre %>
-    <%=f.text_field :genre%>
+    <%=f.select :genre,Music.genres.keys%>
   </p>
 
   <%= f.hidden_field :artist_id, value: @artist_id %>

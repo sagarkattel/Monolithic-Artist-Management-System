@@ -1,0 +1,34 @@
+/*.home{*/
+/*    background-color: red;*/
+/*    height: 100vh;*/
+/*}*/
+
+.home{
+    display: grid;
+    gap: 5%;
+}
+
+.home-user {
+    position: absolute;
+    top: 11%;
+    right: 13%;
+    padding: 10px; /* Add padding for better spacing */
+    background-color: #fff; /* Optional background color */
+}
+.home-sections{
+    display: flex;
+}
+
+.home-buttons {
+    margin-top: 20px;
+}
+
+.home-buttons p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.home-text{
+    font-size: 20px;
+}

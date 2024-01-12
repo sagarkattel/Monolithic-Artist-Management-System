@@ -1,15 +1,29 @@
-
+<div class="home">
+  <div class="home-first">
 <h1> Home </h1>
+  </div>
+  <div class="home-sections">
+    <div class="home-user">
   <% if current_user %>
-  <%= "Hello "+current_user.email %> <br>
+  <p class="home-text"><%= "Hello, "+current_user.email %></p> <br>
     <%= link_to 'Logout', '/logout', :data => { :confirm => 'Are you sure?' }%>
+        </div>
+        <div class="home-buttons">
   <p>
-    <%= button_to 'Users', user_index_path, method: :get %>
+    <%= button_to 'Users', user_index_path, method: :get,  class: 'buttons' %>
   </p>
   <p>
-    <%= button_to 'Artist',  artists_path, method: :get %>
+    <%= button_to 'Artist',  artists_path, method: :get,  class: 'buttons'%>
   </p>
+
   <% else %>
-    <%= link_to 'Signup', new_user_path%> <br>
-    <%= link_to 'Login', '/login'%>
+    <p>
+    <%= button_to 'Signup', new_user_path, method: :get,  class: 'buttons'%> <br>
+    </p>
+    <p>
+    <%= button_to 'Login', '/login' , method: :get,  class: 'buttons'%>
+    </p>
 <% end %>
+      </div>
+  </div>
+</div>

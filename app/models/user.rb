@@ -6,4 +6,5 @@ class User < ApplicationRecord
   validates :dob, presence: true
   validates :gender, presence: true
   validates :address, presence: true
+  enum gender: { Male: 'M', Female: 'F', Other: 'O' }
 end

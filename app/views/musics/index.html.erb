@@ -1,7 +1,7 @@
 
-<%= button_to 'Create Music', new_artist_music_path, method: :get  %>
+<%= button_to 'Create Music', new_artist_music_path, method: :get ,  class: 'buttons' %>
 
-<%= button_to 'Back' ,artists_path, method: :get%>
+<%= button_to 'Back' ,artists_path, method: :get,  class: 'buttons'%>
 
 <% @musics.each do |music| %>
   <p>Title: <%= music.title %></p>

@@ -8,5 +8,6 @@ class Artist < ApplicationRecord
     validates :no_of_albums_released, presence: true
 
     has_many :music
+    enum gender: { Male: 'M', Female: 'F', Other: 'O' }
 end
 

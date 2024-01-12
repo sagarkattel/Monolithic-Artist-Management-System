@@ -49,7 +49,7 @@
 
   <p>
   <%= f.label :gender %>
-  <%= f.text_field :gender %>
+  <%= f.select :gender, User.genders.keys %>
   </p>
 
   <p>

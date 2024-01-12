@@ -19,12 +19,13 @@
     <%=f.date_field :dob%>
     </p>
 
-    <p>
-    <%=f.label :Gender %>
-    <%=f.text_field :gender%>
-    </p>
+  <p>
+    <%= f.label :gender %>
+    <%= f.select :gender, User.genders.keys %>
+  </p>
 
-    <p>
+
+  <p>
     <%=f.label :Address %>
     <%=f.text_field :address%>
     </p>
