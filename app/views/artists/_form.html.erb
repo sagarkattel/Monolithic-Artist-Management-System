@@ -6,7 +6,7 @@
   </ul>
 <% end %>
 
-<%= button_to 'Back' , artists_path, method: :get %>
+<%= button_to 'Back' , artists_path, method: :get,  class: 'buttons' %>
 
 <%= form_with(model: @artist,local: true) do |f| %>
     <p>

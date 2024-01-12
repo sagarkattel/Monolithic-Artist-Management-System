@@ -6,7 +6,7 @@
   </ul>
 <% end %>
 
-<%= button_to 'Back' , artist_musics_path, method: :get %>
+<%= button_to 'Back' , artist_musics_path, method: :get,  class: 'buttons' %>
 
 <%= form_with(model: [@artist, @music], url: artist_music_path(@artist, @music), method: :patch, local: true) do |f| %>
   <p>
