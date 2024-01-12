@@ -18270,3 +18270,1350 @@ ActionView::Template::Error (Couldn't find User with 'id'=6):
 app/controllers/application_controller.rb:5:in `current_user'
 app/controllers/application_controller.rb:7:in `current_user'
 app/views/home/index.html.erb:3
+Started GET "/" for 127.0.0.1 at 2024-01-12 08:46:46 +0545
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 733)
+  Rendered layouts/_messages.html.erb (Duration: 0.4ms | Allocations: 177)
+  Rendered layout layouts/application.html.erb (Duration: 26.2ms | Allocations: 27813)
+Completed 200 OK in 32ms (Views: 27.9ms | ActiveRecord: 0.0ms | Allocations: 32516)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-01-12 08:46:48 +0545
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1746)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 3910)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 4369)
+
+
+Started GET "/user/new" for 127.0.0.1 at 2024-01-12 08:46:49 +0545
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 3889)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 6086)
+Completed 200 OK in 38ms (Views: 5.8ms | ActiveRecord: 1.0ms | Allocations: 27414)
+
+
+Started GET "/" for 127.0.0.1 at 2024-01-12 08:46:51 +0545
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 217)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 2383)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms | Allocations: 2620)
+
+
+Started GET "/users" for 127.0.0.1 at 2024-01-12 08:46:54 +0545
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/users" for 127.0.0.1 at 2024-01-12 08:46:56 +0545
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/user" for 127.0.0.1 at 2024-01-12 08:46:58 +0545
+Processing by UserController#index as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 465)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-01-12 08:46:58 +0545
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 427)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 2619)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 2853)
+
+
+Started POST "/login" for 127.0.0.1 at 2024-01-12 08:47:06 +0545
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"sagar@gmail.com", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "sagar@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 180ms (ActiveRecord: 0.2ms | Allocations: 3489)
+
+
+Started GET "/" for 127.0.0.1 at 2024-01-12 08:47:06 +0545
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendered home/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1796)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 4008)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.1ms | Allocations: 4289)
+
+
+Started GET "/user" for 127.0.0.1 at 2024-01-12 08:47:09 +0545
+Processing by UserController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering user/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/user/index.html.erb:9
+  Rendered user/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 941)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 3107)
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 0.2ms | Allocations: 3987)
+
+
+Started GET "/user/new" for 127.0.0.1 at 2024-01-12 08:47:12 +0545
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1852)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 4033)
+Completed 200 OK in 10ms (Views: 9.8ms | ActiveRecord: 0.0ms | Allocations: 4295)
+
+
+Started GET "/" for 127.0.0.1 at 2024-01-12 08:47:13 +0545
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendered home/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 961)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 3127)
+Completed 200 OK in 8ms (Views: 8.1ms | ActiveRecord: 0.1ms | Allocations: 3362)
+
+
+Started GET "/about" for 127.0.0.1 at 2024-01-12 08:47:15 +0545
+  
+ActionController::RoutingError (No route matches [GET] "/about"):
+  
+Started GET "/artists" for 127.0.0.1 at 2024-01-12 08:47:18 +0545
+Processing by ArtistsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:14
+  Rendered artists/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 859)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 3067)
+Completed 200 OK in 8ms (Views: 4.4ms | ActiveRecord: 0.2ms | Allocations: 5653)
+
+
+Started GET "/artists/new" for 127.0.0.1 at 2024-01-12 08:47:22 +0545
+Processing by ArtistsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering artists/new.html.erb within layouts/application
+  Rendered artists/_form.html.erb (Duration: 2.8ms | Allocations: 2156)
+  Rendered artists/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 2391)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 18)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 4555)
+Completed 200 OK in 16ms (Views: 6.6ms | ActiveRecord: 0.4ms | Allocations: 11585)
+
+
+Started POST "/artists" for 127.0.0.1 at 2024-01-12 08:47:48 +0545
+Processing by ArtistsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "artist"=>{"name"=>"Ed Sheran", "dob"=>"2024-01-16", "gender"=>"M", "address"=>"Tandiii", "first_release_year"=>"2020", "no_of_albums_released"=>"50"}, "commit"=>"Create Artist"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/artists_controller.rb:17:in `create'
+  [1m[36mArtist Create (0.7ms)[0m  [1m[32mINSERT INTO "artists" ("name", "dob", "gender", "address", "first_release_year", "no_of_albums_released", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Ed Sheran"], ["dob", "2024-01-16 00:00:00"], ["gender", "M"], ["address", "Tandiii"], ["first_release_year", 2020], ["no_of_albums_released", 50], ["created_at", "2024-01-12 03:02:48.853956"], ["updated_at", "2024-01-12 03:02:48.853956"]]
+  ↳ app/controllers/artists_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/artists_controller.rb:17:in `create'
+Redirected to http://127.0.0.1:3000/artists
+Completed 302 Found in 6ms (ActiveRecord: 1.8ms | Allocations: 3907)
+
+
+Started GET "/artists" for 127.0.0.1 at 2024-01-12 08:47:48 +0545
+Processing by ArtistsController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.0ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:14
+  Rendered artists/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 620)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 2804)
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.1ms | Allocations: 3636)
+
+
+Started GET "/artists/2/musics" for 127.0.0.1 at 2024-01-12 08:47:50 +0545
+Processing by MusicsController#index as HTML
+  Parameters: {"artist_id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering musics/index.html.erb within layouts/application
+  [1m[36mMusic Load (0.1ms)[0m  [1m[34mSELECT "musics".* FROM "musics" WHERE "musics"."artist_id" = ?[0m  [["artist_id", 2]]
+  ↳ app/views/musics/index.html.erb:6
+  Rendered musics/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 909)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 3085)
+Completed 200 OK in 14ms (Views: 5.1ms | ActiveRecord: 0.5ms | Allocations: 5756)
+
+
+Started GET "/artists/2/musics/new" for 127.0.0.1 at 2024-01-12 08:47:52 +0545
+Processing by MusicsController#new as HTML
+  Parameters: {"artist_id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering musics/new.html.erb within layouts/application
+  Rendered musics/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1514)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 3676)
+Completed 200 OK in 21ms (Views: 5.3ms | ActiveRecord: 0.2ms | Allocations: 10578)
+
+
+Started GET "/artists/2/musics" for 127.0.0.1 at 2024-01-12 08:48:16 +0545
+Processing by MusicsController#index as HTML
+  Parameters: {"artist_id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering musics/index.html.erb within layouts/application
+  [1m[36mMusic Load (0.0ms)[0m  [1m[34mSELECT "musics".* FROM "musics" WHERE "musics"."artist_id" = ?[0m  [["artist_id", 2]]
+  ↳ app/views/musics/index.html.erb:6
+  Rendered musics/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 502)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 2664)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.1ms | Allocations: 3501)
+
+
+Started GET "/artists" for 127.0.0.1 at 2024-01-12 08:48:17 +0545
+Processing by ArtistsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.0ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:14
+  Rendered artists/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 583)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 2749)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.1ms | Allocations: 3552)
+
+
+Started GET "/" for 127.0.0.1 at 2024-01-12 08:48:21 +0545
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendered home/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 933)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 3114)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.1ms | Allocations: 3347)
+
+
+Started GET "/logout" for 127.0.0.1 at 2024-01-12 08:48:23 +0545
+Processing by SessionsController#destroy as HTML
+Redirected to http://127.0.0.1:3000/login
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 282)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-01-12 08:48:23 +0545
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 394)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 2584)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms | Allocations: 2821)
+
+
+Started GET "/users" for 127.0.0.1 at 2024-01-12 08:48:25 +0545
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/about" for 127.0.0.1 at 2024-01-12 08:48:26 +0545
+  
+ActionController::RoutingError (No route matches [GET] "/about"):
+  
+Started GET "/artists" for 127.0.0.1 at 2024-01-12 08:48:27 +0545
+Processing by ArtistsController#index as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 320)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-01-12 08:48:27 +0545
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 400)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 2590)
+Completed 200 OK in 4ms (Views: 4.3ms | ActiveRecord: 0.0ms | Allocations: 2825)
+
+
+Started GET "/artists" for 127.0.0.1 at 2024-01-12 08:48:33 +0545
+Processing by ArtistsController#index as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 315)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-01-12 08:48:33 +0545
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 408)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 2571)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 2804)
+
+
+Started GET "/user/new" for 127.0.0.1 at 2024-01-12 08:48:35 +0545
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1837)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 4002)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.0ms | Allocations: 4259)
+
+
+Started GET "/" for 127.0.0.1 at 2024-01-12 08:48:36 +0545
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 215)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 2381)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms | Allocations: 2616)
+
+
+Started GET "/" for 127.0.0.1 at 2024-01-12 08:48:39 +0545
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 227)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 2393)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms | Allocations: 2626)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-01-12 08:48:40 +0545
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 395)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 2556)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.0ms | Allocations: 2791)
+
+
+Started POST "/login" for 127.0.0.1 at 2024-01-12 08:48:44 +0545
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"sagar@gmail.com", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "sagar@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 177ms (ActiveRecord: 0.1ms | Allocations: 726)
+
+
+Started GET "/" for 127.0.0.1 at 2024-01-12 08:48:44 +0545
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendered home/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 965)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 3160)
+Completed 200 OK in 4ms (Views: 4.2ms | ActiveRecord: 0.1ms | Allocations: 3399)
+
+
+Started GET "/artists" for 127.0.0.1 at 2024-01-12 08:48:48 +0545
+Processing by ArtistsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.0ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:14
+  Rendered artists/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 582)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 2748)
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.1ms | Allocations: 3533)
+
+
+Started GET "/artists" for 127.0.0.1 at 2024-01-12 08:49:14 +0545
+Processing by ArtistsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.0ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:14
+  Rendered artists/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 582)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 2748)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.1ms | Allocations: 3529)
+
+
+Started GET "/user" for 127.0.0.1 at 2024-01-12 08:49:17 +0545
+Processing by UserController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering user/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/user/index.html.erb:9
+  Rendered user/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 603)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 2769)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.1ms | Allocations: 3571)
+
+
+Started GET "/user/new" for 127.0.0.1 at 2024-01-12 08:49:19 +0545
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1843)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 4008)
+Completed 200 OK in 5ms (Views: 5.1ms | ActiveRecord: 0.0ms | Allocations: 4265)
+
+
+Started GET "/" for 127.0.0.1 at 2024-01-12 08:49:19 +0545
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendered home/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 936)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 3102)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.1ms | Allocations: 3337)
+
+
+Started GET "/user" for 127.0.0.1 at 2024-01-12 08:49:28 +0545
+Processing by UserController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering user/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/user/index.html.erb:9
+  Rendered user/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 603)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 2769)
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.1ms | Allocations: 3556)
+
+
+Started GET "/artists" for 127.0.0.1 at 2024-01-12 08:49:30 +0545
+Processing by ArtistsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.0ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:14
+  Rendered artists/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 582)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 2775)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.1ms | Allocations: 3555)
+
+
+Started GET "/artists" for 127.0.0.1 at 2024-01-12 08:49:55 +0545
+Processing by ArtistsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.0ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:14
+  Rendered artists/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 582)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 2748)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.1ms | Allocations: 3539)
+
+
+Started GET "/user" for 127.0.0.1 at 2024-01-12 08:49:58 +0545
+Processing by UserController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering user/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/user/index.html.erb:9
+  Rendered user/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 603)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 2769)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.1ms | Allocations: 3565)
+
+
+Started GET "/user/2/edit" for 127.0.0.1 at 2024-01-12 08:50:01 +0545
+Processing by UserController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:23:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering user/edit.html.erb within layouts/application
+  Rendered user/edit.html.erb within layouts/application (Duration: 2.5ms | Allocations: 2310)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 4471)
+Completed 200 OK in 7ms (Views: 4.6ms | ActiveRecord: 0.1ms | Allocations: 5688)
+
+
+Started GET "/user" for 127.0.0.1 at 2024-01-12 08:50:02 +0545
+Processing by UserController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering user/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/user/index.html.erb:9
+  Rendered user/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 603)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 2769)
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.1ms | Allocations: 3556)
+
+
+Started GET "/user" for 127.0.0.1 at 2024-01-12 08:50:05 +0545
+Processing by UserController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering user/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/user/index.html.erb:9
+  Rendered user/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 603)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 2769)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.1ms | Allocations: 3559)
+
+
+Started GET "/" for 127.0.0.1 at 2024-01-12 08:50:11 +0545
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendered home/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 945)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 3142)
+Completed 200 OK in 5ms (Views: 5.1ms | ActiveRecord: 0.1ms | Allocations: 3376)
+
+
+Started GET "/artists" for 127.0.0.1 at 2024-01-12 08:50:28 +0545
+Processing by ArtistsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.0ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:14
+  Rendered artists/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 582)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 2748)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.1ms | Allocations: 3526)
+
+
+Started GET "/artists/2/musics" for 127.0.0.1 at 2024-01-12 08:54:15 +0545
+Processing by MusicsController#index as HTML
+  Parameters: {"artist_id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering musics/index.html.erb within layouts/application
+  [1m[36mMusic Load (0.1ms)[0m  [1m[34mSELECT "musics".* FROM "musics" WHERE "musics"."artist_id" = ?[0m  [["artist_id", 2]]
+  ↳ app/views/musics/index.html.erb:6
+  Rendered musics/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 501)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 2663)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.2ms | Allocations: 3474)
+
+
+Started GET "/artists" for 127.0.0.1 at 2024-01-12 08:54:16 +0545
+Processing by ArtistsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:14
+  Rendered artists/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 582)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 2748)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.1ms | Allocations: 3535)
+
+
+Started GET "/artists" for 127.0.0.1 at 2024-01-12 09:57:38 +0545
+Processing by ArtistsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:14
+  Rendered artists/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 622)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 2796)
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 1.1ms | Allocations: 3887)
+
+
+Started GET "/" for 127.0.0.1 at 2024-01-12 09:57:41 +0545
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendered home/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 951)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 3117)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.1ms | Allocations: 3350)
+
+
+Started GET "/artists" for 127.0.0.1 at 2024-01-12 09:57:42 +0545
+Processing by ArtistsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.0ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:14
+  Rendered artists/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 582)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 2748)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.1ms | Allocations: 3547)
+
+
+Started GET "/user" for 127.0.0.1 at 2024-01-12 09:57:44 +0545
+Processing by UserController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering user/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/user/index.html.erb:9
+  Rendered user/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 651)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 2844)
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 0.2ms | Allocations: 3629)
+
+
+Started GET "/artists" for 127.0.0.1 at 2024-01-12 09:59:14 +0545
+Processing by ArtistsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.0ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:14
+  Rendered artists/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 582)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 2748)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.1ms | Allocations: 3539)
+
+
+Started GET "/user" for 127.0.0.1 at 2024-01-12 09:59:16 +0545
+Processing by UserController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering user/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/user/index.html.erb:9
+  Rendered user/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 603)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 2769)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.1ms | Allocations: 3553)
+
+
+Started GET "/artists" for 127.0.0.1 at 2024-01-12 09:59:19 +0545
+Processing by ArtistsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:14
+  Rendered artists/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 582)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 2748)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.1ms | Allocations: 3532)
+
+
+Started GET "/user" for 127.0.0.1 at 2024-01-12 09:59:21 +0545
+Processing by UserController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering user/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/user/index.html.erb:9
+  Rendered user/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 603)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 2769)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.2ms | Allocations: 3547)
+
+
+Started GET "/user" for 127.0.0.1 at 2024-01-12 09:59:32 +0545
+Processing by UserController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering user/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/user/index.html.erb:9
+  Rendered user/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 603)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 2769)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.1ms | Allocations: 3553)
+
+
+Started GET "/artists" for 127.0.0.1 at 2024-01-12 09:59:34 +0545
+Processing by ArtistsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.0ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:14
+  Rendered artists/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 582)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 2748)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.1ms | Allocations: 3523)
+
+
+Started GET "/artists" for 127.0.0.1 at 2024-01-12 10:00:49 +0545
+Processing by ArtistsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.0ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:14
+  Rendered artists/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 582)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 2775)
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.1ms | Allocations: 3570)
+
+
+Started GET "/user" for 127.0.0.1 at 2024-01-12 10:00:51 +0545
+Processing by UserController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering user/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/user/index.html.erb:9
+  Rendered user/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 603)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 2769)
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.2ms | Allocations: 3557)
+
+
+Started GET "/artists" for 127.0.0.1 at 2024-01-12 10:01:36 +0545
+Processing by ArtistsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.0ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:14
+  Rendered artists/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 582)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 2748)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.1ms | Allocations: 3541)
+
+
+Started GET "/user" for 127.0.0.1 at 2024-01-12 10:01:38 +0545
+Processing by UserController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering user/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/user/index.html.erb:9
+  Rendered user/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 603)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 2769)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.1ms | Allocations: 3556)
+
+
+Started GET "/user/new" for 127.0.0.1 at 2024-01-12 10:01:40 +0545
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1846)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 4011)
+Completed 200 OK in 8ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 4268)
+
+
+Started GET "/" for 127.0.0.1 at 2024-01-12 10:01:41 +0545
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendered home/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 948)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 3114)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.1ms | Allocations: 3349)
+
+
+Started GET "/user" for 127.0.0.1 at 2024-01-12 10:01:47 +0545
+Processing by UserController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering user/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/user/index.html.erb:9
+  Rendered user/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 603)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 2769)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.1ms | Allocations: 3559)
+
+
+Started GET "/artists" for 127.0.0.1 at 2024-01-12 10:01:49 +0545
+Processing by ArtistsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:14
+  Rendered artists/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 582)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 2775)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.1ms | Allocations: 3567)
+
+
+Started GET "/artists/2/musics" for 127.0.0.1 at 2024-01-12 10:02:36 +0545
+Processing by MusicsController#index as HTML
+  Parameters: {"artist_id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering musics/index.html.erb within layouts/application
+  [1m[36mMusic Load (0.2ms)[0m  [1m[34mSELECT "musics".* FROM "musics" WHERE "musics"."artist_id" = ?[0m  [["artist_id", 2]]
+  ↳ app/views/musics/index.html.erb:6
+  Rendered musics/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 533)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 2695)
+Completed 200 OK in 6ms (Views: 4.1ms | ActiveRecord: 0.2ms | Allocations: 3524)
+
+
+Started GET "/artists" for 127.0.0.1 at 2024-01-12 10:02:37 +0545
+Processing by ArtistsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.0ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:14
+  Rendered artists/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 582)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 2748)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.1ms | Allocations: 3532)
+
+
+Started GET "/artists/2" for 127.0.0.1 at 2024-01-12 10:02:39 +0545
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:51:in `set_artist'
+  Rendering layout layouts/application.html.erb
+  Rendering artists/show.html.erb within layouts/application
+  Rendered artists/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 298)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 2460)
+Completed 200 OK in 6ms (Views: 2.8ms | ActiveRecord: 0.2ms | Allocations: 4320)
+
+
+Started GET "/artists" for 127.0.0.1 at 2024-01-12 10:02:40 +0545
+Processing by ArtistsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:14
+  Rendered artists/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 582)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 2748)
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.1ms | Allocations: 3544)
+
+
+Started GET "/artists/2/edit" for 127.0.0.1 at 2024-01-12 10:02:41 +0545
+Processing by ArtistsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:51:in `set_artist'
+  Rendering layout layouts/application.html.erb
+  Rendering artists/edit.html.erb within layouts/application
+  Rendered artists/_form.html.erb (Duration: 1.7ms | Allocations: 1366)
+  Rendered artists/edit.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1526)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 18)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 3686)
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 0.1ms | Allocations: 4890)
+
+
+Started GET "/artists" for 127.0.0.1 at 2024-01-12 10:02:43 +0545
+Processing by ArtistsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:14
+  Rendered artists/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 582)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 2775)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.1ms | Allocations: 3560)
+
+
+Started GET "/artists" for 127.0.0.1 at 2024-01-12 10:02:51 +0545
+Processing by ArtistsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:14
+  Rendered artists/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 582)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 2748)
+Completed 200 OK in 6ms (Views: 3.5ms | ActiveRecord: 0.2ms | Allocations: 3533)
+
+
+Started GET "/artists/new" for 127.0.0.1 at 2024-01-12 10:05:08 +0545
+Processing by ArtistsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering artists/new.html.erb within layouts/application
+  Rendered artists/_form.html.erb (Duration: 1.5ms | Allocations: 1860)
+  Rendered artists/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 2102)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 145)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 4752)
+Completed 200 OK in 28ms (Views: 4.8ms | ActiveRecord: 3.0ms | Allocations: 17524)
+
+
+Started GET "/artists" for 127.0.0.1 at 2024-01-12 10:05:10 +0545
+Processing by ArtistsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:15
+  Rendered artists/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1054)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 3220)
+Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 0.2ms | Allocations: 4110)
+
+
+Started GET "/artists/new" for 127.0.0.1 at 2024-01-12 10:05:10 +0545
+Processing by ArtistsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering artists/new.html.erb within layouts/application
+  Rendered artists/_form.html.erb (Duration: 1.4ms | Allocations: 1284)
+  Rendered artists/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1347)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 18)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 3511)
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.1ms | Allocations: 4302)
+
+
+Started GET "/artists" for 127.0.0.1 at 2024-01-12 10:05:11 +0545
+Processing by ArtistsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.0ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:15
+  Rendered artists/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 614)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 2780)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.1ms | Allocations: 3558)
+
+
+Started GET "/artists" for 127.0.0.1 at 2024-01-12 10:05:58 +0545
+Processing by ArtistsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:15
+  Rendered artists/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 4720)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 147)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 7390)
+Completed 200 OK in 20ms (Views: 7.1ms | ActiveRecord: 4.7ms | Allocations: 16524)
+
+
+Started GET "/" for 127.0.0.1 at 2024-01-12 10:06:00 +0545
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendered home/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1200)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 3380)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.1ms | Allocations: 3836)
+
+
+Started GET "/" for 127.0.0.1 at 2024-01-12 10:06:01 +0545
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendered home/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 933)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 3099)
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.1ms | Allocations: 3332)
+
+
+Started GET "/artists" for 127.0.0.1 at 2024-01-12 10:06:02 +0545
+Processing by ArtistsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:15
+  Rendered artists/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 607)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 2773)
+Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 0.2ms | Allocations: 3560)
+
+
+Started GET "/artists" for 127.0.0.1 at 2024-01-12 10:06:09 +0545
+Processing by ArtistsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:15
+  Rendered artists/index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 4721)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 147)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 7391)
+Completed 200 OK in 21ms (Views: 9.2ms | ActiveRecord: 1.7ms | Allocations: 16555)
+
+
+Started GET "/artists" for 127.0.0.1 at 2024-01-12 10:06:16 +0545
+Processing by ArtistsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:15
+  Rendered artists/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 4722)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 147)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 7392)
+Completed 200 OK in 15ms (Views: 7.2ms | ActiveRecord: 1.5ms | Allocations: 16536)
+
+
+Started GET "/" for 127.0.0.1 at 2024-01-12 10:06:17 +0545
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendered home/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1213)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 3393)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.1ms | Allocations: 3849)
+
+
+Started GET "/artists/new" for 127.0.0.1 at 2024-01-12 10:06:19 +0545
+Processing by ArtistsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering artists/new.html.erb within layouts/application
+  Rendered artists/_form.html.erb (Duration: 4.0ms | Allocations: 1796)
+  Rendered artists/new.html.erb within layouts/application (Duration: 4.7ms | Allocations: 2028)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | Allocations: 4209)
+Completed 200 OK in 17ms (Views: 15.6ms | ActiveRecord: 0.1ms | Allocations: 5093)
+
+
+Started GET "/artists" for 127.0.0.1 at 2024-01-12 10:06:20 +0545
+Processing by ArtistsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.0ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:15
+  Rendered artists/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 607)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 2791)
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.1ms | Allocations: 3587)
+
+
+Started GET "/" for 127.0.0.1 at 2024-01-12 10:06:21 +0545
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendered home/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 954)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 3122)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.1ms | Allocations: 3357)
+
+
+Started GET "/artists" for 127.0.0.1 at 2024-01-12 10:06:22 +0545
+Processing by ArtistsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.0ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:15
+  Rendered artists/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 606)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 2772)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.1ms | Allocations: 3556)
+
+
+Started GET "/artists/2/musics" for 127.0.0.1 at 2024-01-12 10:07:51 +0545
+Processing by MusicsController#index as HTML
+  Parameters: {"artist_id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering musics/index.html.erb within layouts/application
+  [1m[36mMusic Load (0.1ms)[0m  [1m[34mSELECT "musics".* FROM "musics" WHERE "musics"."artist_id" = ?[0m  [["artist_id", 2]]
+  ↳ app/views/musics/index.html.erb:6
+  Rendered musics/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 837)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 3014)
+Completed 200 OK in 7ms (Views: 3.8ms | ActiveRecord: 0.3ms | Allocations: 5406)
+
+
+Started GET "/artists" for 127.0.0.1 at 2024-01-12 10:07:52 +0545
+Processing by ArtistsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.0ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:15
+  Rendered artists/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 607)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 2773)
+Completed 200 OK in 6ms (Views: 3.3ms | ActiveRecord: 0.2ms | Allocations: 3566)
+
+
+Started GET "/artists/2/musics" for 127.0.0.1 at 2024-01-12 10:07:53 +0545
+Processing by MusicsController#index as HTML
+  Parameters: {"artist_id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering musics/index.html.erb within layouts/application
+  [1m[36mMusic Load (0.0ms)[0m  [1m[34mSELECT "musics".* FROM "musics" WHERE "musics"."artist_id" = ?[0m  [["artist_id", 2]]
+  ↳ app/views/musics/index.html.erb:6
+  Rendered musics/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 501)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 2690)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.1ms | Allocations: 3499)
+
+
+Started GET "/artists/2/musics/new" for 127.0.0.1 at 2024-01-12 10:07:55 +0545
+Processing by MusicsController#new as HTML
+  Parameters: {"artist_id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering musics/new.html.erb within layouts/application
+  Rendered musics/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1281)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 3466)
+Completed 200 OK in 11ms (Views: 6.1ms | ActiveRecord: 0.3ms | Allocations: 7058)
+
+
+Started POST "/artists/2/musics" for 127.0.0.1 at 2024-01-12 10:07:59 +0545
+Processing by MusicsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "music"=>{"title"=>"bbbb", "album_name"=>"bbb", "genre"=>"bbb", "artist_id"=>"2"}, "commit"=>"Create Music", "artist_id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/musics_controller.rb:21:in `create'
+  [1m[36mArtist Load (1.0ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/musics_controller.rb:21:in `create'
+  [1m[36mMusic Create (0.2ms)[0m  [1m[32mINSERT INTO "musics" ("title", "album_name", "genre", "created_at", "updated_at", "artist_id") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "bbbb"], ["album_name", "bbb"], ["genre", "bbb"], ["created_at", "2024-01-12 04:22:59.377681"], ["updated_at", "2024-01-12 04:22:59.377681"], ["artist_id", 2]]
+  ↳ app/controllers/musics_controller.rb:21:in `create'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/musics_controller.rb:21:in `create'
+Redirected to http://127.0.0.1:3000/artists/2/musics
+Completed 302 Found in 15ms (ActiveRecord: 2.6ms | Allocations: 7008)
+
+
+Started GET "/artists/2/musics" for 127.0.0.1 at 2024-01-12 10:07:59 +0545
+Processing by MusicsController#index as TURBO_STREAM
+  Parameters: {"artist_id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering musics/index.html.erb within layouts/application
+  [1m[36mMusic Load (0.0ms)[0m  [1m[34mSELECT "musics".* FROM "musics" WHERE "musics"."artist_id" = ?[0m  [["artist_id", 2]]
+  ↳ app/views/musics/index.html.erb:6
+  [1m[36mArtist Load (0.0ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/musics/index.html.erb:11
+  Rendered musics/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1178)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 3387)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.1ms | Allocations: 4269)
+
+
+Started GET "/artists" for 127.0.0.1 at 2024-01-12 10:08:00 +0545
+Processing by ArtistsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.0ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:15
+  Rendered artists/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 606)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 2772)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.1ms | Allocations: 3565)
+
+
+Started GET "/" for 127.0.0.1 at 2024-01-12 10:12:26 +0545
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendered home/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 954)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 3147)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.1ms | Allocations: 3383)
+
+
+Started GET "/artists" for 127.0.0.1 at 2024-01-12 10:12:28 +0545
+Processing by ArtistsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:15
+  Rendered artists/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 606)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 2796)
+Completed 200 OK in 9ms (Views: 6.3ms | ActiveRecord: 0.2ms | Allocations: 3599)
+
+
+Started GET "/" for 127.0.0.1 at 2024-01-12 10:12:31 +0545
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendered home/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 942)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 3108)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.1ms | Allocations: 3343)
+
+
+Started GET "/user" for 127.0.0.1 at 2024-01-12 10:14:12 +0545
+Processing by UserController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering user/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/user/index.html.erb:9
+  Rendered user/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 905)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 3085)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.2ms | Allocations: 4171)
+
+
+Started GET "/user" for 127.0.0.1 at 2024-01-12 10:23:59 +0545
+Processing by UserController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering user/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/user/index.html.erb:9
+  Rendered user/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 981)
+  Rendered layouts/_messages.html.erb (Duration: 0.3ms | Allocations: 147)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 3651)
+Completed 200 OK in 12ms (Views: 6.5ms | ActiveRecord: 1.1ms | Allocations: 11002)
+
+
+Started GET "/" for 127.0.0.1 at 2024-01-12 10:24:03 +0545
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  Rendered home/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1205)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 3385)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.1ms | Allocations: 3840)
+
+
